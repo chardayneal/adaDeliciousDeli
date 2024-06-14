@@ -7,7 +7,6 @@ adaPrices = {
 };
 
 
-
 // Create an event handler for fom submission
 function handleFormSubmission(e) {
     e.preventDefault();
@@ -40,15 +39,14 @@ function handleFormSubmission(e) {
     let total = sandwichOrderCalculator(breadSelection, fillingSelection, extraSelection, promoCode);
     updateWithTotal(total);
 
+    //update UI
     document.querySelector("main").removeChild(document.querySelector("form"));
-
 }
 
 // Create calculator to handle customer selections
 function sandwichOrderCalculator(breadType, fillings, extras, promoCode) {
     //initialize customer total
     let customerTotal = 0;
-
 
     // ----- STEP 1: Calculate cost of bread
     customerTotal += adaPrices.breadPrices[breadType];
@@ -69,31 +67,29 @@ function sandwichOrderCalculator(breadType, fillings, extras, promoCode) {
     // ----- STEP 4: Determine valid promo code
     promoCode === adaPrices.discountCode ? customerTotal -= 1.50 : null;
 
-    console.log(customerTotal);
     return customerTotal;
 }
 
+
+// after css styling, come back and setAttributes
 function updateWithTotal(total) {
     let container = document.createElement('div');
 
     let subHeader = document.createElement('h2');
     subHeader.textContent = "Total cost for order: ";
-    let costElement = document.createElement('h3');
-
+    
     // format total
     let formattedTotal = total.toFixed(2);
+    let costElement = document.createElement('h3');
     costElement.textContent = `$${formattedTotal}`;
 
+    // create reset button
     let resetBtn = document.createElement('button');
     resetBtn.textContent = "Start New Order";
-    resetBtn.addEventListener('click', handleReset);
+    resetBtn.addEventListener('click', () => location.reload());
     
-
+    // append child elements to respective nodes
     container.append(subHeader, costElement,resetBtn);
-    document.getElementById('total-info').append(container);
+    document.querySelector('main').append(container);
 
-}
-
-function handleReset() {
-    location.reload();
 }
