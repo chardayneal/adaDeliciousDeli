@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+    <title>Ada's Delicious Deli</title>
+</head>
+<body>
+    <header>
+        <h1>Ada's Delicious Deli</h1>
+    </header>
+
+    <main>
+        <form>
+            <div class="select1">
+                <h3>Please select type of bread:</h3>
+                <label for="bread-type">Select type of bread:</label>
+                <select id="bread" name="bread-type" required>
+                    <option value="white">White</option>
+                    <option value="wheat">Wheat</option>
+                    <option value="rye">Rye</option>
+                    <option value="sourdough">Sourdough</option>
+                </select>
+            </div>
+
+            <div class="select2">
+                <h3>Please select type of filling(s):</h3>
+                <div class="fillings">
+                    <div class="filling-selection">
+                        <input class="meat" type="checkbox" id="ham" name="ham" value="ham">
+                        <label for="ham"> Ham</label><br>
+                    </div>
+                    <div class="filling-selection">
+                        <input class="meat" type="checkbox" id="turkey" name="turkey" value="turkey">
+                        <label for="turkey"> Turkey</label><br>
+                    </div>
+                    <div class="filling-selection">
+                        <input class="meat" type="checkbox" id="chicken" name="chicken" value="chicken">
+                        <label for="chicken"> Chicken</label><br>
+                    </div>
+                    <div class="filling-selection">
+                        <input class="meat" type="checkbox" id="tofu" name="tofu" value="tofu">
+                        <label for="tofu"> Tofu</label><br>
+                    </div>
+                    <div class="filling-selection">
+                        <input class="meat" type="checkbox" id="cheese" name="cheese" value="cheese">
+                        <label for="cheese"> Cheese</label><br>
+                    </div>
+                </div>
+            </div>
+
+            <div class="select3">
+                <h3>Please select extras (optional):</h3>
+                <div class="extras">
+                    <div class="extra-selection">
+                        <input class="add-ons" type="checkbox" id="lettuce" name="lettuce" value="lettuce">
+                        <label for="lettuce"> Lettuce</label><br>
+                    </div>
+                    <div class="extra-selection">
+                        <input class="add-ons" type="checkbox" id="tomato" name="tomato" value="tomato">
+                        <label for="tomato"> Tomatoes</label><br>
+                    </div>
+                    <div class="extra-selection">
+                        <input class="add-ons" type="checkbox" id="avocado" name="avocado" value="avocado">
+                        <label for="avocado"> Avocado</label><br>
+                    </div>
+                    <div class="extra-selection">
+                        <input class="add-ons" type="checkbox" id="bacon" name="bacon" value="bacon">
+                        <label for="bacon"> Bacon</label><br>
+                    </div>
+                </div>
+            </div>
+
+            <div class="select4">
+                <label for="promo-code">Promo code?<label>
+                <input type="text" id="promo-code" name="promo-code">
+
+            </div>
+            <input type="submit" value="Complete Order">
+        </form>
+    </main>
+
+    <footer>Made by ChardayDevs 2024</footer>
+</body>
+</html>
