@@ -13,7 +13,8 @@
     </header>
 
     <main>
-        <form>
+        <form onsubmit="handleFormSubmission(event)">
+            <!-- Bread Type -->
             <div class="select1">
                 <h3>Please select type of bread:</h3>
                 <label for="bread-type">Select type of bread:</label>
@@ -25,6 +26,7 @@
                 </select>
             </div>
 
+            <!-- Fillings -->
             <div class="select2">
                 <h3>Please select type of filling(s):</h3>
                 <div class="fillings">
@@ -51,6 +53,7 @@
                 </div>
             </div>
 
+            <!-- Extras -->
             <div class="select3">
                 <h3>Please select extras (optional):</h3>
                 <div class="extras">
@@ -73,13 +76,20 @@
                 </div>
             </div>
 
+            <!-- Promo Code -->
             <div class="select4">
-                <label for="promo-code">Promo code?<label>
+                
                 <input type="text" id="promo-code" name="promo-code">
-
+                <label for="promo-code">Promo code?</label>
             </div>
+
+            <!-- Submit -->
             <input type="submit" value="Complete Order">
         </form>
+        <div id="total-info">
+
+        </div>
+
     </main>
 
     <footer>Made by ChardayDevs 2024</footer>
