@@ -88,17 +88,29 @@ function sandwichOrderCalculator(breadType, fillings, extras, promoCode) {
 // after css styling, come back and setAttributes
 function updateWithTotal(total) {
     let container = document.createElement('div');
+    container.setAttribute('class', 'container');
+
+    let headerContainer = document.createElement('div');
+    headerContainer.setAttribute('class', 'header-container');
 
     let subHeader = document.createElement('h3');
-    subHeader.textContent = "Total cost for order: ";
+    subHeader.textContent = "Grand Total: ";
     
     // format total
     let formattedTotal = total.toFixed(2);
-    let costElement = document.createElement('h4');
+    let costElement = document.createElement('h3');
     costElement.textContent = `$${formattedTotal}`;
+
+    headerContainer.append(subHeader, costElement);
+
+    // create button  container
+    let btnContainer = document.createElement('div');
+    btnContainer.setAttribute('class', 'btn-container');
+
 
     // create reset button
     let resetBtn = document.createElement('button');
+    resetBtn.setAttribute('class', 'style-btn');
     resetBtn.textContent = "Start New Order";
     resetBtn.addEventListener('click', () => {
         resetCustomerOrder();
@@ -106,8 +118,10 @@ function updateWithTotal(total) {
 
     });
 
+    btnContainer.append(resetBtn);
+
     // append child elements to respective nodes
-    container.append(subHeader, costElement,resetBtn);
+    container.append(headerContainer, btnContainer);
     document.querySelector('main').append(container);
 }
 
@@ -164,6 +178,7 @@ function listSelection(parentNode, value) {
             name.textContent = key.charAt(0).toUpperCase() + key.slice(1);
 
             let price = document.createElement('span');
+            price.setAttribute('class', 'price');
             price.textContent = `$${value[key]}`;
             
             selection.append(name, price);
