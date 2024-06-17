@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="./script.js" defer></script>
     <title>Ada's Delicious Deli</title>
 </head>
 <body>
+    <div class="top-bkg"></div>
     <header>
+        <i class="fa-solid fa-burger"></i>
         <h1>Ada's Delicious Deli</h1>
     </header>
 
@@ -16,8 +22,7 @@
         <form onsubmit="handleFormSubmission(event)">
             <!-- Bread Type -->
             <div class="select1">
-                <h3>Please select type of bread:</h3>
-                <label for="bread-type">Select type of bread:</label>
+                <h3>Bread Type</h3>
                 <select id="bread" name="bread-type" required>
                     <option disabled selected value="">Select an Option</option>
                     <option value="white">White</option>
@@ -29,7 +34,7 @@
 
             <!-- Fillings -->
             <div class="select2">
-                <h3>Please select type of filling(s):</h3>
+                <h3>Filling(s):</h3>
                 <div class="fillings">
                     <div class="filling-selection">
                         <input class="meat" type="checkbox" id="ham" name="ham" value="ham">
@@ -56,7 +61,7 @@
 
             <!-- Extras -->
             <div class="select3">
-                <h3>Please select extras (optional):</h3>
+                <h3>Extra(s):</h3>
                 <div class="extras">
                     <div class="extra-selection">
                         <input class="add-ons" type="checkbox" id="lettuce" name="lettuce" value="lettuce">
@@ -79,13 +84,13 @@
 
             <!-- Promo Code -->
             <div class="select4">
-                
-                <input type="text" id="promo-code" name="promo-code">
-                <label for="promo-code">Promo code?</label>
+                <input type="text" id="promo-code" name="promo-code" placeholder="Enter promo code here...">
             </div>
 
             <!-- Submit -->
-            <input type="submit" value="Complete Order">
+            <div class="submit-order">
+                <input type="submit" value="Complete Order" class="style-btn">
+            </div>
         </form>
 
 
@@ -138,6 +143,6 @@
 
     </main>
 
-    <footer>Made by ChardayDevs 2024</footer>
+    <footer>Made by ChardayDevs <i class="fa-regular fa-copyright"></i> 2024</footer>
 </body>
 </html>
