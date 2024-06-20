@@ -156,18 +156,20 @@ function createReceipt(object) {
 
 function listSelection(parentNode, value) {
 
-    if (typeof value === 'string' && value === 'ADARULEZ') {
-        let selection = document.createElement('div');
-        selection.setAttribute('class', 'selection');
+    if (typeof value === 'string') {
+        if (value === 'ADARULEZ') {
+            let selection = document.createElement('div');
+            selection.setAttribute('class', 'selection');
 
-        let title = document.createElement('span');
-        title.textContent = "Discount";
+            let title = document.createElement('span');
+            title.textContent = "Discount";
 
-        let price = document.createElement('span');
-        price.textContent = `- $1.50`;
+            let price = document.createElement('span');
+            price.textContent = `- $1.50`;
 
-        selection.append(title, price);
-        parentNode.append(selection);
+            selection.append(title, price);
+            parentNode.append(selection);
+        }
     } else {        
         let keys = Object.keys(value);
         keys.forEach(key => {
@@ -179,7 +181,7 @@ function listSelection(parentNode, value) {
 
             let price = document.createElement('span');
             price.setAttribute('class', 'price');
-            price.textContent = `$${value[key]}`;
+            price.textContent = `$${value[key].toFixed(2)}`;
             
             selection.append(name, price);
             parentNode.append(selection);
